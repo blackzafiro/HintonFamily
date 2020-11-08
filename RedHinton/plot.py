@@ -79,7 +79,8 @@ class MidPointNorm(Normalize):
             raise ValueError("Not invertible until scaled")
         vmin, vmax, midpoint = self.vmin, self.vmax, self.midpoint
 
-        if cbook.iterable(value):
+        #if cbook.iterable(value):
+        if np.iterable(value):
             val = ma.asarray(value)
             val = 2 * (val-0.5)
             val[val>0]  *= abs(vmax - midpoint)

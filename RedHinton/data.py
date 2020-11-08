@@ -95,7 +95,7 @@ tercias = np.vstack((esposas, esposos, padres, madres, hermanos, hermanas,
 
 # De todas las relaciones, eliminaremos la persona 2.
 # Las entradas distintas que quedan son:
-unicas = np.vstack({tuple(row) for row in tercias[:,0:2]})
+unicas = np.vstack(list({tuple(row) for row in tercias[:,0:2]}))
 
 
 # Pasar las relaciones a vectores de entrada numéricos para la red neuronal
